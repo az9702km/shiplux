@@ -1,0 +1,78 @@
+.step-wrapper
+  grid-template-columns: repeat(7, 1fr)
+  grid-gap: 1.5rem
+  .controls
+    display: flex
+    justify-content: center
+    align-items: start
+    grid-gap: .75rem
+    .btn
+      height: 3.75rem
+      padding: .75rem
+      display: inline-block
+      border-radius: 50%
+      background-color: #E3F2FD
+      transition: all .2s ease-in-out
+      &:hover
+        background-color: darken(#E3F2FD, 10)
+        transition: all .2s ease-in-out
+        
+  .indicators
+    margin-top: 2.5rem
+    display: flex !important
+    align-items: center
+    grid-gap: .5rem
+    justify-content: center
+
+    .indicator
+      border: 0
+      background-color: transparent
+      padding: 0
+      cursor: pointer
+      &.active
+        span
+          background-color: $primary-color
+      &:hover
+        span
+          background-color: darken(#E3F2FD, 10)
+          transition: all .2s ease-in-out
+      span
+        display: block
+        width: 3.5rem
+        height: .75rem
+        border-radius: .375rem
+        background-color: #E3F2FD
+        transition: all .2s ease-in-out
+.step-img
+  max-width: 100%
+  aspect-ratio: 16/9
+  object-fit: cover
+  border-radius: 1rem
+.step-stage
+  margin-bottom: 2rem
+.step-item
+  padding-left: 2rem 
+  .step-head
+    font-size: 3rem
+    font-weight: 800
+    line-height: 1.2
+    margin-bottom: 3rem
+  .step-body
+    p
+      margin: 0
+      font-size: 1.25rem
+      line-height: 1.5
+      margin-bottom: 3rem
+      font-weight: 600
+  .features
+    display: flex
+    flex-direction: column
+    grid-gap: 1rem
+    font-size: 1.5rem
+    line-height: 1.5
+    color: $accent-color
+    font-weight: 600
+    .feature
+      display: flex
+      align-items: center
+      grid-gap: .75rem

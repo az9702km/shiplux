@@ -31,6 +31,8 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px)
+	.mobile-callbtn
+		display: none
 	/**/
 
 
@@ -41,15 +43,83 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
+	.mobile-callbtn
+		display: inline-block
+	.navbar
+		.nav-toggle
+			margin-left: 1rem
+	.mobile-show
+		.nav-link
+			font-size: 2.5rem
+			padding: 1.5rem
+		.btn
+			font-size: 2.5rem
+			margin-top: 2rem
+	.hero-text 
+		h1
+			font-size: 4rem
+	.services
+		padding: 3rem
+		&-header
+			.header
+				font-size: 4rem
+	.about-us-wrapper
+		padding: 3rem
+		.section-header
+			.header
+				font-size: 4rem
+	.call-us-wrapper
+		padding: 3.5rem
+	.call-us-body
+		.call-us-contacts
+			flex-direction: row
+			grid-gap: 3rem
+	.step-wrapper
+		position: relative
+		.controls
+			position: absolute
+			top: 0
+			right: -9.5rem
+		.indicators
+			padding-left: 2rem
+			justify-content: start
+	.step-item
+		justify-content: end
 	/**/
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
+	.mobile-callbtn
+		display: none
+	.nav-toggle
+		display: none
+	.navbar-links
+		display: flex
+	.about-images
+		position: absolute !important
+		padding: 0 1.5rem
+		margin-top: 0 !important
+	.about-us-wrapper
+		.section-header
+			.header
+				max-width: 50rem
+	.call-us-phone
+		display: block
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		bottom: -3.5rem
+	.step-img
+		aspect-ratio: 5/8
+	.copyrights
+		text-align: right
 	/**/
 
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
+	.hero-video
+		height: 35rem
 	/**/
 

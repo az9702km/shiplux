@@ -2,8 +2,26 @@
 @use 'sass:color'
 
 @import "fonts"
-@import "libs"
 @import "vars"
+
+// components
+@import "components/navbar"
+@import "components/buttons"
+@import "components/sections"
+@import "components/testimonial"
+@import "components/owlCarousel"
+
+
+// Parts
+@import "parts/hero"
+@import "parts/services"
+@import "parts/features"
+@import "parts/about-us"
+@import "parts/testimonials"
+@import "parts/call-us"
+@import "parts/step"
+@import "parts/contacts"
+@import "parts/footer"
 
 *
 	-webkit-box-sizing: border-box
@@ -36,17 +54,24 @@ body textarea:focus:required:invalid
 body input:required:valid,
 body textarea:required:valid
 	color: #666
-
+html
+	font-size: 16px
+	color: $text-color
 html, body
 	height: 100%
 
 body
-	font-size: 16px
+	font-size: 1rem
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.5
 	font-family: $default-font
 	overflow-x: hidden
+	margin: 0
+
+a
+	display: inline-block
+	text-decoration: none
 
 .img-responsive
 	display: block

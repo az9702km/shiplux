@@ -17,11 +17,12 @@ import cache         from 'gulp-cache'
 import autoprefixer  from 'autoprefixer'
 import ftp           from 'vinyl-ftp'
 import rsyncfn       from 'gulp-rsync'
+import fileinclude   from 'gulp-file-include'
 
 function browsersync() {
 	browserSync.init({
 		server: {
-			baseDir: 'app/',
+			baseDir: 'public/',
 		},
 		ghostMode: { clicks: false },
 		notify: false,
@@ -32,12 +33,23 @@ function browsersync() {
 
 function js() {
 	return src([
-		'app/libs/jquery/dist/jquery.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
 	.pipe(uglify()) // Минимизировать весь js (на выбор)
-	.pipe(dest('app/js'))
+	.pipe(dest('public/js'))
+	.pipe(browserSync.stream())
+}
+
+function html() {
+	return src([
+		'app/**/*.html'
+	])
+	.pipe(fileinclude({
+		prefix: '@@',
+		basepath: '@root'
+	}))
+	.pipe(dest('public/'))
 	.pipe(browserSync.stream())
 }
 
@@ -49,7 +61,7 @@ function sass() {
 		cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })
 	]))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
-	.pipe(dest('app/css'))
+	.pipe(dest('public/css'))
 	.pipe(browserSync.stream())
 }
 
@@ -59,16 +71,21 @@ function imagemin() {
 		.pipe(dest('dist/img/'))
 }
 
+function imageminPublic() {
+	return src(['app/img/**/*'])
+		.pipe(imageminfn())
+		.pipe(dest('public/img/'))
+}
+
 async function removedist() { await deleteAsync('dist/**/*', { force: true }) }
 async function clearcache() { cache.clearAll() }
 
 function buildcopy() {
 	return src([
-		'app/*.html',
-		'app/.htaccess',
-		'{app/js,app/css}/*.min.*',
-		'app/fonts/**/*'
-	], { base: 'app/' })
+		'public/*.html',
+		'{public/js,public/css}/*.min.*',
+		'public/fonts/**/*'
+	], { base: 'public/' })
 	.pipe(dest('dist'))
 }
 
@@ -105,11 +122,13 @@ function rsync() {
 
 function startwatch() {
 	watch('app/sass/**/*.sass', { usePolling: true }, sass)
-	watch(['libs/**/*.js', 'app/js/common.js'], { usePolling: true }, js)
+	watch(['app/js/common.js'], { usePolling: true }, js)
+	watch(['app/**/*.html'], { usePolling: true }, html)
+	watch(['app/img/**/*'], imageminPublic)
 	watch(['app/*.html'], { usePolling: true }).on('change', browserSync.reload)
 }
 
-export { js, sass, imagemin, deploy, rsync, clearcache }
-export let build = series(removedist, imagemin, js, sass, buildcopy)
+export { js, sass, imagemin, imageminPublic, html, deploy, rsync, clearcache }
+export let build = series(removedist, imagemin, imageminPublic, js, sass, html, buildcopy)
 
-export default series(js, sass, parallel(browsersync, startwatch))
+export default series(js, sass, html, parallel(browsersync, startwatch))

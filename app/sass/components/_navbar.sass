@@ -1,0 +1,50 @@
+.navbar
+  display: flex
+  align-items: center
+  padding: 1.875rem 0
+
+  .nav-link
+    font-size: 1.25rem
+
+  .navbar-links
+    margin-left: auto
+
+  .btn
+    margin-left: 2rem
+  .closer-icon
+    display: none
+  .closer-icon.closer-icon--show
+    display: block
+  .nav-toggle
+    padding: .75rem
+    border-radius: 50%
+    margin-left: auto
+  .mobile-show
+    display: flex
+    position: absolute
+    top: 100%
+    background-color: white
+    flex-direction: column
+    padding: 2rem
+    left: 0
+    right: 0
+
+
+.navbar-brand
+  img
+    height: 3rem
+  font-size: 1.5rem
+  line-height: 1.2
+  vertical-align: middle
+
+.navbar-links
+  display: none
+  align-items: center
+
+  .nav-link
+    padding: .75rem 1rem
+    font-weight: 600
+    color: $text-color
+    &:hover
+      color: $blue
+      text-decoration: none
