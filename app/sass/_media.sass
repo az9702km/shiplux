@@ -43,6 +43,17 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px)
+	.video-wrapper
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		aspect-ratio: unset
+		.hero-video
+			&::before
+				background: linear-gradient(115deg, rgba(255,255,255,1) 20%, rgba(255,255,255,.8) 50%, rgba(255,255,255,0) 100%)
+						
 	.mobile-callbtn
 		display: inline-block
 	.navbar
@@ -119,7 +130,5 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
-	.hero-video
-		height: 35rem
 	/**/
 
