@@ -1,21 +1,35 @@
 header.header
   z-index: 1024
-  background-color: white
   position: relative
 .header.header--dark
-  position: fixed
-  left: 0
-  top: 0
-  right: 0
   background-color: $primary-color
   .logoSvg
     fill: white
-  .mobile-show
-    background-color: $primary-color
   .navbar-links .nav-link
     color: white
     &:hover
       color: $accent-color
+.header.header--fixed
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+.header:has(.mobile-show)
+  background-color: $primary-color
+  .logoSvg
+    fill: white
+  .navbar-links .nav-link
+    color: white
+    &:hover
+      color: $accent-color
+.header
+  .mobile-show
+    background-color: $primary-color
+    height: calc( 100vh - 5.75rem )
+    .navbar-links .nav-link
+      color: white
+      &:hover
+        color: $accent-color
   .mobile-callbtn, .navbar-links .btn
     background-color: white
     color: $primary-color
@@ -30,9 +44,19 @@ header.header
   .nav-link
     font-size: 1.25rem
     transition: color .2s ease-in-out
+    display: flex
+    align-items: center
+    &:hover
+      color: $blue
+    .icon-tabler
+      margin-left: auto
+      transition: transform .2s ease-in-out
+      &.icon--rotate
+        transform: rotate(180deg)
 
   .navbar-links
     margin-left: auto
+    align-items: stretch
 
   .btn
     margin-left: 2rem
@@ -48,7 +72,6 @@ header.header
     display: flex
     position: absolute
     top: 100%
-    background-color: white
     flex-direction: column
     padding: 2rem
     left: 0
@@ -65,7 +88,6 @@ header.header
 
 .navbar-links
   display: none
-  align-items: center
 
   .nav-link
     padding: .75rem 1rem
@@ -74,4 +96,34 @@ header.header
     &:hover
       transition: color .2s ease-in-out
       color: $blue
+      text-decoration: none
+.service-megamenu
+  height: 100%
+  overflow: scroll
+  background-color: rgba(0, 0, 0, .3)
+  border-radius: 1rem
+  display: none
+.services-menu
+  diflay: flex
+  flex-direction: column
+  color: white
+  align-items: stretch
+  &__head
+    padding: 1rem .25rem
+    display: block
+    color: $accent-color
+.menu-list
+  list-style: none
+  padding: 0
+  margin: 0
+  &__item
+    padding: .5rem .25rem
+    font-size: .875rem
+    letter-spacing: .06em
+    font-weight: 500
+  &__link
+    color: white
+    transition: color .2s ease-in-out
+    &:hover
+      color: $accent-color
       text-decoration: none
