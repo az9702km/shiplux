@@ -1,7 +1,7 @@
-<section class="hero-section">
+<section class="hero-section" id="home">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-7 hero-text">
+    <div class="row align-items-end">
+      <div class="col-lg-6 hero-text">
         <div class="subheader">
           ShipLux: эксперт по автодоставке
         </div>
@@ -10,13 +10,79 @@
           Нужно отправить автомобиль? Сообщите нам, когда и где, а мы позаботимся обо всем остальном. Это действительно может быть так просто. С ShipLux обработка White Glove не является дополнительной, это просто наш стиль.
         </p>
       </div>
-      <div class="col-lg-5 video-wrapper">
-        <div class="hero-video">
-          <video autoplay muted loop>
-            <source src="https://www.profexoshipping.com/wp-content/uploads/2023/01/SnapSave.io-RoadRunner-Auto-Transport-_-5-Star-Customer-Rated-Car-Shipping.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <div class="col-md-3 ms-auto pb-5" style="position: relative; z-index: 100">
+        <div class="sst-form">
+          <h2>Запросить стоимость доставки</h2>
+          <form class="step-form form-validation" id="getquote">
+            <div id="form-wizard">
+              <div class="h3">1</div>
+              <section>
+                <div class="form-control">
+                  <label for="pickup" class="form-control__label">Подобрать *</label>
+                  <input type="text" required class="form-control__input" id="pickup" name="pickup" placeholder="почтовый индекс подбора">
+                </div>
+                <div class="form-control">
+                  <label for="deliver" class="form-control__label">Доставка *</label>
+                  <input type="text" required class="form-control__input" id="deliver" name="deliver" placeholder="почтовый индекс пункта назначения">
+                </div>
+                <div class="form-control">
+                  <label for="dateDeliver" class="form-control__label">Дата отправки *</label>
+                  <input type="date" required class="form-control__input" id="dateDeliver" name="dateDeliver" placeholder="ДД.ММ.ГГГГ">
+                </div>
+              </section>
+              <div class="h3">2</div>
+              <section>
+                  
+              <section>
+                <div class="form-control">
+                  <label for="vehYear" class="form-control__label">Год выпуска автомобиля *</label>
+                  <input type="text" required id="vehYear" name="vehYear" class="form-control__input">
+                </div>
+                <div class="form-control">
+                  <label for="vehMake" class="form-control__label">Марка автомобиля *</label>
+                  <input type="text" required id="vehMake" name="vehMake" class="form-control__input">
+                </div>
+                <div class="form-control">
+                  <label for="vehModel" class="form-control__label">Модель автомобиля *</label>
+                  <input type="text" required id="vehModel" name="vehModel" class="form-control__input">
+                </div>
+                <div class="form-control">
+                  <label for="typeDeliver" class="form-control__label">Тип транспорта *</label>
+                  <select name="typeDeliver" class="form-control__input" id="typeDeliver">
+                    <option value="">Открытый</option>
+                    <option value="">Закрытый</option>
+                  </select>
+                </div>
+              </section>
+              </section>
+              <div class="h3">3</div>
+              <section>
+                <div class="form-control">
+                  <label for="name" class="form-control__label">Имя *</label>
+                  <input type="text" required class="form-control__input" id="name" name="name" autocomplete="name" placeholder="Введите..">
+                </div>
+                <div class="form-control">
+                  <label for="email" class="form-control__label">Электронная почта *</label>
+                  <input type="email" required class="form-control__input" id="email" name="emai" autocomplete="email" placeholder="Введите..">
+                </div>
+                <div class="form-control">
+                  <label for="tel" class="form-control__label">Номер телефона *</label>
+                  <input type="tel" required class="form-control__input" id="tel" name="tel" autocomplete="tel" placeholder="Введите..">
+                </div>
+                <!-- <button class="btn btn-accent" type="submit">Получить расценку</button> -->
+              </section>
+            </div>
+
+          </form>
         </div>
+      </div>
+    </div>
+    <div class="video-wrapper">
+      <div class="hero-video">
+        <video autoplay muted loop>
+          <source src="https://www.profexoshipping.com/wp-content/uploads/2023/01/SnapSave.io-RoadRunner-Auto-Transport-_-5-Star-Customer-Rated-Car-Shipping.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>

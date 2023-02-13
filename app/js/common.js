@@ -54,4 +54,54 @@ $(function() {
 		$( ".closer-icon" ).toggleClass( "closer-icon--show" );		
 	});
 
+	$(window).scroll(function(){
+		var sticky = $('header.header'),
+				scroll = $(window).scrollTop();
+				heroSec = $('header.header').outerHeight();
+	
+		if (scroll > heroSec) sticky.addClass('header--dark');
+		else sticky.removeClass('header--dark');
+	});
+
+	let form = $("#getquote");
+	form.validate({
+			errorPlacement: function errorPlacement(error, element) { element.before(error); },
+			rules: {
+					confirm: {
+							equalTo: "#password"
+					}
+			}
+	});
+
+	$("#form-wizard").steps({
+    headerTag: ".h3",
+    bodyTag: "section",
+    autoFocus: true,
+		labels: {
+			cancel: "Отмена",
+			current: "current step:",
+			pagination: "Pagination",
+			finish: "Получить расценку",
+			next: "Далее",
+			previous: "Назад",
+			loading: "Загрузка ..."
+		},
+		enableFinishButton: true,
+		onStepChanging: function (event, currentIndex, newIndex)
+    {
+        form.validate().settings.ignore = ":disabled,:hidden";
+        return form.valid();
+    },
+    onFinishing: function (event, currentIndex)
+    {
+        form.validate().settings.ignore = ":disabled";
+        return form.valid();
+    },
+    onFinished: function (event, currentIndex)
+    {
+      alert("Submitted!");
+    }
+
+	});
+
 });
