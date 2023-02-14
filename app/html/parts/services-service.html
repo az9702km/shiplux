@@ -1,0 +1,28 @@
+<section class="service-section" id="services">
+  <div class="container">
+    <div class="services">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="services-header">
+            <div class="subheader">Преимущества</div>
+            <h2 class="header">Опыт ShipLux</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <a href="#" class="btn btn-primary">GET A Quote</a>
+        </div>
+      </div>
+      <div class="services-wrapper row row-cols-1 row-cols-lg-2 gy-4">
+        @@loop('app/html/parts/service-block.html', [
+          { "icon": "./img/services/enclosed-sr.svg", "header": "Full-Service Shipping", "subheader": "Your commercial bus shipping solution is completely personalized, and Premium Service is always included from start to finish. Whatever you need, we’ll make it happen." },
+          { "icon": "./img/services/24-365-sr.svg", "header": "24/365 Communication", "subheader": "We’re here for you. Thanks to our proprietary communication system, you can contact one of our team members at any time, on whatever medium you prefer." },
+          { "icon": "./img/services/personal-insp.svg", "header": "Global Door-to-Door", "subheader": "Shipping from anywhere to anywhere within the continental United States, Canada, Hawaii, Alaska, US Virgin Islands, as well as numerous international destinations." },
+          { "icon": "./img/services/multi-vehicle.svg", "header": "Price Transparency", "subheader": "When you get a price quote for your commercial bus transport, that’s price you’ll pay. We don’t believe in surprise surcharges or hidden fees. Honest pricing – that’s the ShipLux promise." },
+        ])
+        <div class="col">
+          <a href="#" class="btn btn-primary">GET A Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

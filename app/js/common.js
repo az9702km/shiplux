@@ -20,6 +20,40 @@ $(function() {
         }
     }
 	})
+	$('.partners-slider').owlCarousel({
+    loop:false,
+    margin:24,
+		loop:true,
+    nav: 1,
+		dots: 1,
+		navContainerClass: 'partners-controls owl-nav',
+		navClass: ['btn btn-partner-control', 'btn btn-partner-control'],
+    responsive:{
+        0:{
+            items:1,
+        },
+        600:{
+            items:3,
+        },
+        1000:{
+            items:4,
+        }
+    },
+		navText: [
+			`<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				<line x1="5" y1="12" x2="19" y2="12"></line>
+				<line x1="5" y1="12" x2="11" y2="18"></line>
+				<line x1="5" y1="12" x2="11" y2="6"></line>
+			</svg>`, 
+			`<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+				<line x1="5" y1="12" x2="19" y2="12"></line>
+				<line x1="13" y1="18" x2="19" y2="12"></line>
+				<line x1="13" y1="6" x2="19" y2="12"></line>
+			</svg>`
+		]
+	})
 	$('.step-owl').owlCarousel({
     loop:false,
     nav:true,
@@ -73,7 +107,7 @@ $(function() {
 			}
 	});
 
-	$("#form-wizard").steps({
+	$(".quote-wizard").steps({
     headerTag: ".h3",
     bodyTag: "section",
     autoFocus: true,
