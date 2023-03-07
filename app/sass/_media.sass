@@ -42,7 +42,16 @@
 
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px)						
+@media only screen and (min-width : 768px)			
+	.partners-slider
+		margin-top: -6rem
+		.partners-controls
+			order: -1
+			margin-bottom: 3rem !important		
+			justify-content: end !important
+	.section-title
+		font-size: 3rem !important
+		margin-bottom: 2rem !important
 	.mobile-callbtn
 		display: inline-block
 	.navbar
@@ -64,7 +73,6 @@
 	.call-us-wrapper
 		padding: 3.5rem
 	.call-us-body
-		border-right: 1px solid rgba(255, 255, 255, .4)
 		.call-us-contacts
 			.contact
 				font-size: 1.5rem
@@ -88,6 +96,10 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
+	.call-us-body
+		border-right: 1px solid rgba(255, 255, 255, .4)
+	.section-title
+		font-size: 4rem !important
 	.mobile-callbtn
 		display: none
 	.nav-toggle
